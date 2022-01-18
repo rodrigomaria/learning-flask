@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  learning-flask:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      FLASK_APP: "app/app.py"
+      FLASK_ENV: "development" 
+    container_name: learning-flask
+    volumes:
+      - ./:/app
+    ports:
+      - "5001:5001"
+    stdin_open: true
+    tty: true
